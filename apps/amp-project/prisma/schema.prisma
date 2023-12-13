@@ -6,3 +6,12 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model Project {
+  createdAt DateTime  @default(now())
+  id        String    @id @default(cuid())
+  name      String
+  owner     String
+  startDate DateTime?
+  updatedAt DateTime  @updatedAt
+}

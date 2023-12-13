@@ -5,6 +5,10 @@ import { theme } from "./theme/theme";
 import Login from "./Login";
 import "./App.scss";
 import Dashboard from "./pages/Dashboard";
+import { ProjectList } from "./project/ProjectList";
+import { ProjectCreate } from "./project/ProjectCreate";
+import { ProjectEdit } from "./project/ProjectEdit";
+import { ProjectShow } from "./project/ProjectShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -30,7 +34,15 @@ const App = (): React.ReactElement => {
         theme={theme}
         dashboard={Dashboard}
         loginPage={Login}
-      ></Admin>
+      >
+        <Resource
+          name="Project"
+          list={ProjectList}
+          edit={ProjectEdit}
+          create={ProjectCreate}
+          show={ProjectShow}
+        />
+      </Admin>
     </div>
   );
 };
